@@ -1,15 +1,17 @@
-function isIsogram(str) {
-var strArr = str;
-for (var i = 0; i < strArr.length; i++) {
-    for (var j = 0; j < strArr.length; j++) {
-        if(i!=j){
-          if (strArr[i] == strArr[j]) {
-              return false
-          }
-        }
+function isIsogram(word){
+  if( word == null || word == ""){
+    return false;
+}
+  word = word.toLowerCase();
+  var array = word.split('');
+  var sortedArr = array.slice().sort();
+  for(var i=0;i<array.length;i++){
+    if(sortedArr[i+1] == sortedArr[i]){
+      return false;
     }
-}
-return true;
-}
+  }
+  return true
+  }
+  
+  
 
-console.log(isIsogram("icsac")); //false
